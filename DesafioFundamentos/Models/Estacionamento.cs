@@ -1,5 +1,34 @@
 namespace DesafioFundamentos.Models
 {
+    // Criação da Classe Estacionamento
+    public class Estacionamento
+    {
+
+
+        // Criação das variáveis precoInicial e precoPorHora, e da lista de veículos (Tipo List para comportar inserção de veículos sem dimensão pré-definida como em arrays).
+        private decimal precoInicial;
+        private decimal precoPorHora;
+
+        private List<string> listaDeVeiculos = new List<string>();
+
+        // Constructor para definir os dois atributos básicos do objeto instanciado
+        public Estacionamento( decimal precoInicial, decimal precoPorHora){
+            this.precoInicial = precoInicial;
+            this.precoPorHora = precoPorHora;
+        }
+
+
+        public void AdicionarVeiculo(){
+
+        }
+
+        public void RemoverVeiculo(){
+
+        }
+
+        public void ListarVeiculos(){
+            
+        }
 
 
 
@@ -7,7 +36,14 @@ namespace DesafioFundamentos.Models
 
 
 
-    
+
+
+
+
+
+    }
+
+
     // public class Estacionamento
     // {
     //     private decimal precoInicial = 0;
