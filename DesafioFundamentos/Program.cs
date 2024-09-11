@@ -6,9 +6,15 @@ Console.OutputEncoding = System.Text.Encoding.UTF8;
 
 
 
+decimal precoInicial = 0;
+decimal precoPorHora = 0;
 
 
-
+System.Console.WriteLine("Bem vindo ao Sistema de Gerenciamento de Estacionamentos C#");
+System.Console.WriteLine("Por favor informe o Preço inicial: R$");
+precoInicial =  Convert.ToDecimal(Console.ReadLine());
+System.Console.WriteLine("Por favor informe o Preço por hora: R$");
+precoPorHora =  Convert.ToDecimal(Console.ReadLine());
 
 
 
