@@ -1,3 +1,9 @@
+using System;
+using System.Collections.Generic;
+
+//utilização de REGEX para validação da placa inserida.
+using System.Text.RegularExpressions;
+
 namespace DesafioFundamentos.Models
 {
     // Criação da Classe Estacionamento
@@ -20,6 +26,27 @@ namespace DesafioFundamentos.Models
 
         public void AdicionarVeiculo(){
 
+            bool loop_add = true;
+            while (loop_add){
+                Console.WriteLine("Por favor, insira a placa do veículo que deseja adicionar: ");
+                string plate = Convert.ToString(Console.ReadLine());
+            
+                if ( validacaoPlaca(plate)){
+                    listaDeVeiculos.Add(plate);
+                    Console.WriteLine($"O veículo de placa {plate} foi adicionado com sucesso ao estacionamento.");
+                    break;
+                } else {
+                    Console.WriteLine($"O veículo não foi adicionado ao estacionamento. /n Tente novamente");
+                    break;
+                }
+
+            }
+        }
+
+        // Função privada à classe, com verificação se a placa informada é igual a placa Padrão
+        private bool validacaoPlaca(string placa){
+             string padraoPlaca = @"^[A-Z]{3}[0-9]{4}$";
+            return Regex.IsMatch(placa.ToUpper(), padraoPlaca);
         }
 
         public void RemoverVeiculo(){
@@ -27,7 +54,7 @@ namespace DesafioFundamentos.Models
         }
 
         public void ListarVeiculos(){
-            
+
         }
 
 
