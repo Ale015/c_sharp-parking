@@ -7,6 +7,6 @@ Você foi contratado para construir um sistema para um estacionamento, que será
 ## Diagrama Demonstrativo de Interface
 Fluxograma que demonstra as opções disponibilizadas e suas respectivas funções.
 
-![Diagrama de Interface](Imagens/diagrama_tl.png)
+![Diagrama de Interface](Imagens/diagrama_tl_updated.png)
 
 ## Prints de Execução:
