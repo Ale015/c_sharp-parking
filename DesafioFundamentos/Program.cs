@@ -10,13 +10,37 @@ Console.OutputEncoding = System.Text.Encoding.UTF8;
 decimal precoInicial = 0;
 decimal precoPorHora = 0;
 
+bool loopPrecoInicial = true;
+bool loopPrecoPorHora = true;
 
 System.Console.WriteLine("Bem vindo ao Sistema de Gerenciamento de Estacionamentos C#");
-System.Console.WriteLine("Por favor informe o Preço inicial: R$");
-precoInicial =  Convert.ToDecimal(Console.ReadLine());
-System.Console.WriteLine("Por favor informe o Preço por hora: R$");
-precoPorHora =  Convert.ToDecimal(Console.ReadLine());
+while(loopPrecoInicial == true){
+    System.Console.WriteLine("Por favor informe o Preço inicial: R$");
+    try
+    {
+        precoInicial =  Convert.ToDecimal(Console.ReadLine());
+        loopPrecoInicial = false;
+    }
+    catch 
+    {
+        Console.WriteLine("Por favor insira um valor válido");
+        continue;
+    }
+};
 
+while(loopPrecoPorHora == true){
+    System.Console.WriteLine("Por favor informe o Preço por hora: R$");
+    try
+    {
+        precoPorHora =  Convert.ToDecimal(Console.ReadLine());
+        loopPrecoPorHora = false;
+    }
+    catch
+    {
+        Console.WriteLine("Por favor insira um valor válido");
+        continue;
+    }
+};
 
 // Instanciamento do objeto parking a partir da classe Estacionamento.
 Estacionamento parking = new Estacionamento(precoInicial, precoPorHora);
@@ -27,7 +51,7 @@ string opcaoDesejada = "";
 
 while ( loopInterface == true){
     Console.WriteLine("Digite a sua opção: ");
-    Console.WriteLine("1 - Cadastrar veículo \n2 - Remover veículo \n3 - Listar veículos \n4- Encerrar");
+    Console.WriteLine("1 - Cadastrar veículo \n2 - Remover veículo \n3 - Listar veículos \n4 - Encerrar");
 
     opcaoDesejada = Convert.ToString(Console.ReadLine().Trim().ToLower());
 
@@ -35,10 +59,10 @@ while ( loopInterface == true){
         parking.AdicionarVeiculo();
     }
     else if (opcaoDesejada == "2" || opcaoDesejada == "remover veiculo" || opcaoDesejada == "remover ve├¡culo"){
-        break;
+        parking.RemoverVeiculo();
     }
     else if (opcaoDesejada == "3" || opcaoDesejada == "listar veiculos" || opcaoDesejada == "listar ve├¡culos"){
-
+        parking.ListarVeiculos();
     }
     else if (opcaoDesejada == "4" || opcaoDesejada == "encerrar" || opcaoDesejada == "exit"){
         loopInterface = false;
@@ -49,7 +73,7 @@ while ( loopInterface == true){
 
 }
 
-Console.WriteLine("Press any key to continue");
+Console.WriteLine("Press any Key to finish:");
 Console.ReadKey();
 
 
