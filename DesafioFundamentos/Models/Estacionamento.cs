@@ -45,7 +45,8 @@ namespace DesafioFundamentos.Models
 
         // Função privada à classe, com verificação se a placa informada é igual a placa Padrão
         private bool validacaoPlaca(string placa){
-             string padraoPlaca = @"^[A-Z]{3}[0-9]{4}$";
+            placa = placa.Replace("-","");
+            string padraoPlaca = @"^[A-Z]{3}[0-9][0-9A-Z][0-9]{2}$";;
             return Regex.IsMatch(placa.ToUpper(), padraoPlaca);
         }
 
@@ -54,7 +55,7 @@ namespace DesafioFundamentos.Models
         }
 
         public void ListarVeiculos(){
-
+            Console.WriteLine("Os veículos estacionados são:");
         }
 
 
