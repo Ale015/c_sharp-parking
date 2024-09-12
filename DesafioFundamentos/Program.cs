@@ -1,4 +1,5 @@
-﻿using DesafioFundamentos.Models;
+﻿using System.Reflection.Emit;
+using DesafioFundamentos.Models;
 
 // Coloca o encoding para UTF8 para exibir acentuação
 Console.OutputEncoding = System.Text.Encoding.UTF8;
@@ -17,9 +18,36 @@ System.Console.WriteLine("Por favor informe o Preço por hora: R$");
 precoPorHora =  Convert.ToDecimal(Console.ReadLine());
 
 
+// Instanciamento do objeto parking a partir da classe Estacionamento.
+Estacionamento parking = new Estacionamento(precoInicial, precoPorHora);
 
+// Booleano para manter loop ativo até que break seja ativado na 4° opção
+bool loopInterface = true;
+string opcaoDesejada = "";
 
+while ( loopInterface == true){
+    Console.WriteLine("Digite a sua opção: ");
+    Console.WriteLine("1 - Cadastrar veículo \n2 - Remover veículo \n3 - Listar veículos \n4- Encerrar");
 
+    opcaoDesejada = Convert.ToString(Console.ReadLine().Trim().ToLower());
+
+    if(opcaoDesejada == "1" || opcaoDesejada == "cadastrar veiculo" || opcaoDesejada =="cadastrar ve├¡culo"){
+        parking.AdicionarVeiculo();
+    }
+    else if (opcaoDesejada == "2" || opcaoDesejada == "remover veiculo" || opcaoDesejada == "remover ve├¡culo"){
+        break;
+    }
+    else if (opcaoDesejada == "3" || opcaoDesejada == "listar veiculos" || opcaoDesejada == "listar ve├¡culos"){
+
+    }
+    else if (opcaoDesejada == "4" || opcaoDesejada == "encerrar" || opcaoDesejada == "exit"){
+        loopInterface = false;
+    } else {
+        Console.WriteLine("Por favor insira uma opção válida, você pode optar por escrever o número referente à opção ou escrever a instrução por completo.");
+        continue;
+    }
+
+}
 
 
 

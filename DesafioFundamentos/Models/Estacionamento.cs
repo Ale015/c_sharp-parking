@@ -12,8 +12,8 @@ namespace DesafioFundamentos.Models
 
 
         // Criação das variáveis precoInicial e precoPorHora, e da lista de veículos (Tipo List para comportar inserção de veículos sem dimensão pré-definida como em arrays).
-        private decimal precoInicial;
-        private decimal precoPorHora;
+        private decimal precoInicial = 0;
+        private decimal precoPorHora = 0;
 
         private List<string> listaDeVeiculos = new List<string>();
 
@@ -37,7 +37,7 @@ namespace DesafioFundamentos.Models
                     break;
                 } else {
                     Console.WriteLine($"O veículo não foi adicionado ao estacionamento. /n Tente novamente");
-                    break;
+                    continue;
                 }
 
             }
